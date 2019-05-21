@@ -1,4 +1,4 @@
-cabal-version: 2.4
+cabal-version: 2.2
 name:
   dhcp-lease-store
 version:
@@ -29,7 +29,7 @@ extra-doc-files:
     README.md
   , CHANGELOG.md
 tested-with:
-  GHC == 8.2.2, GHC == 8.4.4, GHC == 8.6.3
+  GHC == 8.4.4, GHC == 8.6.3
 
 library
   hs-source-dirs:
@@ -37,7 +37,12 @@ library
   exposed-modules:
     DhcpLeaseStore
   build-depends:
-    , base >= 4.10.1.0 && < 4.13
+    , base >= 4.10.1 && < 4.14
+    , streaming-bytestring >= 0.1 && < 0.2
+    , bytestring >= 0.10 && < 0.11
+    , ip >= 1.4 && < 1.6
+    , containers >= 0.5 && < 0.7
+    , attoparsec >= 0.13 && < 0.14
   ghc-options:
     -Wall
     -O2

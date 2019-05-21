@@ -7,6 +7,8 @@ with { inherit (pkgs.stdenv) lib; };
 with pkgs.haskell.lib;
 
 {
+  ip = dontCheck super.ip;
+
   dhcp-lease-store = (
     with rec {
       dhcp-lease-storeSource = pkgs.lib.cleanSource ../.;
